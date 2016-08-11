@@ -1,5 +1,17 @@
 package com.priceline.utilities;
 
-public abstract class GlobalConfig {
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeTest;
 
+public abstract class GlobalConfig {
+	
+	public static WebDriver myDriver = null;
+	private static String siteLink = "https://www.priceline.com/";
+	
+	@BeforeTest
+	public static void ConfigDriver(){
+		myDriver = new FirefoxDriver();
+		myDriver.navigate().to( siteLink );
+	}
 }
