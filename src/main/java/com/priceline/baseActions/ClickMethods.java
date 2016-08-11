@@ -1,5 +1,7 @@
 package com.priceline.baseActions;
 
-public class ClickMethods {
+import com.priceline.utilities.GlobalConfig;
+
+public class ClickMethods extends GlobalConfig{
 
 }

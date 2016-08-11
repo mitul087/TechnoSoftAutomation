@@ -1,5 +1,16 @@
 package com.priceline.utilities;
 
-public class PageObjectHandler extends GlobalConfig{
+import com.priceline.pageObjects.Demo;
 
+public class PageObjectHandler extends GlobalConfig{
+	
+	/*
+	 * Object For Demo Page
+	 * Arafat Mamun
+	 * 08-11-2016 13:31
+	 */
+	public static Demo demo(){
+		Demo demo = new Demo();
+		return demo;
+	}
 }

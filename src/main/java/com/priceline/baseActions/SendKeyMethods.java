@@ -1,5 +1,7 @@
 package com.priceline.baseActions;
 
-public class SendKeyMethods {
+import com.priceline.utilities.GlobalConfig;
+
+public class SendKeyMethods extends GlobalConfig{
 
 }
