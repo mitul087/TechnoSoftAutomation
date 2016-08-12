@@ -1,5 +1,7 @@
 package com.priceline.baseActions;
 
+
+
 import org.testng.Assert;
 
 import com.priceline.utilities.GlobalConfig;
@@ -14,5 +16,6 @@ public class DemoMethods extends GlobalConfig{
 	public void getPageTilet(){
 		System.out.println( myDriver.getTitle() );
 		Assert.assertEquals("true", "true");
+		System.out.println("Demo Methods");
 	}
 }

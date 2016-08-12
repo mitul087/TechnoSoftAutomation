@@ -1,7 +1,6 @@
 package com.priceline.utilities;
 
 import com.priceline.baseActions.DemoMethods;
-import com.priceline.pageObjects.Demo;
 
 public abstract class MethodHandler{
 	
