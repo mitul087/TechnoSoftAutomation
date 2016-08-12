@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.priceline.testRunners.DemoTest" hash-for-method="Demo0001Test">Demo0001Test</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.priceline.runners.Demo001Test" hash-for-method="run_cukes">run_cukes</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -120,14 +120,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.priceline.testRunners.DemoTest</span>
+              <span class="class-name">com.priceline.runners.Demo001Test</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Demo0001Test">
-                  </a> <!-- Demo0001Test -->
-                  <span class="method-name">Demo0001Test</span>
+                  <a name="run_cukes">
+                  </a> <!-- run_cukes -->
+                  <span class="method-name">run_cukes</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,7 +135,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/cl/m56vchmx7652xlsmqcyztxpw0000gn/T/testng-eclipse--273859685/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/cl/m56vchmx7652xlsmqcyztxpw0000gn/T/testng-eclipse--729388316/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -144,7 +144,20 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.priceline.testRunners.DemoTest&quot;/&gt;
+      &lt;class name=&quot;com.priceline.runners.Demo002Test&quot;/&gt;
+      &lt;class name=&quot;com.priceline.testSteps.DemoStepsTwo&quot;/&gt;
+      &lt;class name=&quot;com.priceline.baseActions.DropDownMethods&quot;/&gt;
+      &lt;class name=&quot;com.priceline.testSteps.DemoSteps&quot;/&gt;
+      &lt;class name=&quot;com.priceline.baseActions.DemoMethods&quot;/&gt;
+      &lt;class name=&quot;com.priceline.utilities.PageObjectHandler&quot;/&gt;
+      &lt;class name=&quot;com.priceline.utilities.MethodHandler&quot;/&gt;
+      &lt;class name=&quot;com.priceline.utilities.GlobalConfig&quot;/&gt;
+      &lt;class name=&quot;com.priceline.pageObjects.Demo&quot;/&gt;
+      &lt;class name=&quot;com.priceline.utilities.OnFailure&quot;/&gt;
+      &lt;class name=&quot;com.priceline.runners.Demo001Test&quot;/&gt;
+      &lt;class name=&quot;com.priceline.baseActions.ClickMethods&quot;/&gt;
+      &lt;class name=&quot;com.priceline.baseActions.SendKeyMethods&quot;/&gt;
+      &lt;class name=&quot;com.priceline.utilities.DataBaseConfig&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -158,7 +171,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Default test (1 class)</span>
+                <span class="test-name">Default test (14 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -186,14 +199,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Demo0001Test')
-data.setCell(0, 2, 'com.priceline.testRunners.DemoTest')
-data.setCell(0, 3, 52);
+data.setCell(0, 1, 'run_cukes')
+data.setCell(0, 2, 'com.priceline.runners.Demo001Test')
+data.setCell(0, 3, 1256);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 52 ms</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -208,9 +221,45 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">8 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.priceline.baseActions.DemoMethods</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">ConfigDrivers</span>
+                <br/>
+                <span class="ignored-method-name">terminateDrivers</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.priceline.runners.Demo001Test</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">ConfigDrivers</span>
+                <br/>
+                <span class="ignored-method-name">terminateDrivers</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.priceline.baseActions.ClickMethods</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">ConfigDrivers</span>
+                <br/>
+                <span class="ignored-method-name">terminateDrivers</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.priceline.baseActions.SendKeyMethods</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">ConfigDrivers</span>
+                <br/>
+                <span class="ignored-method-name">terminateDrivers</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -219,15 +268,25 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.priceline.testRunners.DemoTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.priceline.runners.Demo002Test</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">ConfigDrivers</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.priceline.runners.Demo001Test</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">Demo0001Test</span>
-                <span class="method-start">9016 ms</span>
+                <span class="method-name">run_cukes</span>
+                <span class="method-start">11294 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.priceline.runners.Demo002Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">terminateDrivers</span>
+                <span class="method-start">13088 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

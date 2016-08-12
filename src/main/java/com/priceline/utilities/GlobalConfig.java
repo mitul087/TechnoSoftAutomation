@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
@@ -25,7 +27,6 @@ public abstract class GlobalConfig {
 	@BeforeSuite
 	public static void ConfigDrivers(){
 		System.out.println("INITIALIZING DRIVER");
-		System.out.println(chromeDriverPath);
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 		myDriver = new ChromeDriver();
 		//myDriver = new FirefoxDriver();
@@ -37,5 +38,12 @@ public abstract class GlobalConfig {
 		WebElement result = null;
 		
 		return result;
+	}
+	
+	@AfterSuite
+	public static void terminateDrivers(){
+		
+		myDriver.close();
+		myDriver.quit();
 	}
 }

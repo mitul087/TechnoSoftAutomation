@@ -5,9 +5,8 @@ package com.priceline.testSteps;
 
 import com.priceline.utilities.PageObjectHandler;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
+
 
 /**
  * @author arafatmamun
@@ -15,17 +14,17 @@ import cucumber.api.java.en.Given;
  */
 public class DemoStepsTwo extends PageObjectHandler{
 	
-	@Before
+	/*@Before
     public void beforeScenario() {
 		System.out.println("KICK BROWSER 2nd Time");
 		ConfigDrivers();
 		System.out.println("Browser Configured");
-    }
+    }*/
 	
-	@Given("^get title method test two$")
-	public void get_title_method_test_two() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	@Given("^good its working$")
+	public void good_its_working() throws Exception {
+		System.out.println("Running TEST Two");
+		demo().getDemoPageTitleTwo();
 	}
 
 }

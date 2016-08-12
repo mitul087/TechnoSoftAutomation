@@ -18,4 +18,14 @@ public class DemoMethods extends GlobalConfig{
 		Assert.assertEquals("true", "true");
 		System.out.println("Demo Methods");
 	}
+	
+	public void getPageTiletTwo(){
+		System.out.println( myDriver.getTitle() );
+		try{
+			Assert.assertEquals("true", "true");
+		}catch ( Exception excep){
+			System.out.println("Assertion Error");
+		}
+		System.out.println("Demo Methods");
+	}
 }

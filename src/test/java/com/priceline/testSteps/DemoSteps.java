@@ -1,12 +1,12 @@
 package com.priceline.testSteps;
 
 
+import org.testng.annotations.Test;
+
 import com.priceline.utilities.PageObjectHandler;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+
 
 public class DemoSteps extends PageObjectHandler{
 	
@@ -20,16 +20,16 @@ public class DemoSteps extends PageObjectHandler{
 		demo().getDemoPageTitle();
 	}
 	*/
-	@Before
+	/*@Before
     public void beforeScenario() {
 		System.out.println("KICK BROWSER 1st Time");
 		ConfigDrivers();
 		System.out.println("Browser Configured");
-    }
-	
-	@Given("^get title method test$")
-	public void get_title_method_test(){
-		System.out.println("Its Here");
+    }*/
+	@Test
+	@Given("^why multiple defination$")
+	public void why_multiple_defination(){
+		System.out.println("Running Test 1");
 		demo().getDemoPageTitle();
 	   
 	}

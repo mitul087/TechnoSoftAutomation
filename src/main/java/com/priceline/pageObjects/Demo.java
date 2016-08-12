@@ -12,4 +12,9 @@ public class Demo extends MethodHandler{
 	public void getDemoPageTitle(){
 		demoMethods().getPageTilet();
 	}
+	
+	public void getDemoPageTitleTwo() throws Exception{
+
+				demoMethods().getPageTiletTwo();
+	}
 }
