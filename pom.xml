@@ -74,7 +74,11 @@
 		    <artifactId>slf4j-api</artifactId>
 		    <version>${slf4j-api.version}</version>
 		</dependency>
-	
+		<dependency>
+	       <groupId>org.slf4j</groupId>
+	       <artifactId>slf4j-log4j12</artifactId>
+	       <version>1.7.5</version>
+	   </dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
 		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
@@ -100,7 +104,7 @@
 			<version>1.5.1</version>
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
             <groupId>ru.yandex.qatools.allure</groupId>
             <artifactId>allure-testng-adaptor</artifactId>
             <version>${allure.version}</version>
@@ -110,7 +114,7 @@
                     <artifactId>junit</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
+        </dependency> -->
 		
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -133,11 +137,11 @@
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
-		<dependency>
+		<!-- <dependency>
 		    <groupId>info.cukes</groupId>
 		    <artifactId>cucumber-testng</artifactId>
 		    <version>${cucumber-testng.version}</version>
-		</dependency>
+		</dependency> -->
 		
 	</dependencies>
 	

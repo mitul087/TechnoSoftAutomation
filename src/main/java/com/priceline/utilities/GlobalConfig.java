@@ -3,13 +3,6 @@ package com.priceline.utilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-
-import cucumber.api.java.Before;
 
 
 public abstract class GlobalConfig {
@@ -22,9 +15,8 @@ public abstract class GlobalConfig {
 	private static String currentDir = System.getProperty("user.dir");
 	
 	private static String chromeDriverPath = currentDir + fileSeparator + "macChromeDriver" + fileSeparator + "chromedriver";
-	
 	/* end of file paths*/
-	@BeforeSuite
+	
 	public static void ConfigDrivers(){
 		System.out.println("INITIALIZING DRIVER");
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
@@ -40,7 +32,6 @@ public abstract class GlobalConfig {
 		return result;
 	}
 	
-	@AfterSuite
 	public static void terminateDrivers(){
 		
 		myDriver.close();

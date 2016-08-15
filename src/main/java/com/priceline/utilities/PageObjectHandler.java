@@ -2,7 +2,7 @@ package com.priceline.utilities;
 
 import com.priceline.pageObjects.Demo;
 
-public class PageObjectHandler{
+public class PageObjectHandler extends GlobalConfig{
 	
 	/*
 	 * Object For Demo Page
