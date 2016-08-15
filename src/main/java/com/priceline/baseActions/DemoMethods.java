@@ -2,11 +2,14 @@ package com.priceline.baseActions;
 
 
 
-import org.testng.Assert;
+import org.junit.Assert;
 
 import com.priceline.utilities.GlobalConfig;
 
-public class DemoMethods extends GlobalConfig{
+
+
+
+public class DemoMethods extends GlobalConfig {
 	
 	/*
 	 * Demo method to get Title of the page
@@ -21,11 +24,15 @@ public class DemoMethods extends GlobalConfig{
 	
 	public void getPageTiletTwo(){
 		System.out.println( myDriver.getTitle() );
+		System.out.println("Error will Generate in this method");
+		
 		try{
-			Assert.assertEquals("true", "true");
-		}catch ( Exception excep){
+			Assert.assertEquals("true", "false");
+		}catch ( AssertionError excep){
+			Assert.fail();
 			System.out.println("Assertion Error");
 		}
 		System.out.println("Demo Methods");
+		
 	}
 }

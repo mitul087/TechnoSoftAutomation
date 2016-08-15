@@ -1,8 +1,9 @@
 package com.priceline.utilities;
 
 import com.priceline.pageObjects.Demo;
+import com.priceline.testSteps.BrowserConfig;
 
-public class PageObjectHandler extends GlobalConfig{
+public abstract class PageObjectHandler extends BrowserConfig{
 	
 	/*
 	 * Object For Demo Page

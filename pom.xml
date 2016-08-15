@@ -27,30 +27,30 @@
 	
 	<build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven-surefire-plugin.version}</version>
-                <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
-                    <!-- <properties>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<configuration>
+					<testFailureIgnore>false</testFailureIgnore>
+					<argLine>
+						-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+					</argLine>
+					<properties>
 						<property>
 							<name>listener</name>
 							<value>ru.yandex.qatools.allure.cucumberjvm.AllureRunListener</value>
 						</property>
-					</properties> -->
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+					</properties>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 
             <!--Needed only to show reports locally. Run jetty:run and
             open localhost:8080 to show the report-->
@@ -68,17 +68,6 @@
     </build>
 	
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-api</artifactId>
-		    <version>${slf4j-api.version}</version>
-		</dependency>
-		<dependency>
-	       <groupId>org.slf4j</groupId>
-	       <artifactId>slf4j-log4j12</artifactId>
-	       <version>1.7.5</version>
-	   </dependency>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
 		<dependency>
 		    <groupId>org.seleniumhq.selenium</groupId>
@@ -92,11 +81,12 @@
 		    <version>${selenium-java.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<dependency>
+		<!-- <dependency>
 		    <groupId>org.testng</groupId>
 		    <artifactId>testng</artifactId>
 		    <version>${testng.version}</version>
-		</dependency>
+		</dependency> -->
+		
 		<!-- Allure Report Depencies -->
 		<dependency>
 			<groupId>ru.yandex.qatools.allure</groupId>
@@ -116,11 +106,11 @@
             </exclusions>
         </dependency> -->
 		
-        <dependency>
+       <!-- <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>${hamcrest-all.version}</version>
-        </dependency>
+        </dependency> -->
         <!-- https://mvnrepository.com/artifact/com.github.detro/phantomjsdriver -->
 		<!-- <dependency>
 		    <groupId>com.github.detro</groupId>
@@ -129,6 +119,7 @@
 		</dependency> -->
         
         
+        <!-- Dependencies for Cucumber -->
         <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 		<dependency>
 		    <groupId>info.cukes</groupId>
@@ -143,6 +134,11 @@
 		    <version>${cucumber-testng.version}</version>
 		</dependency> -->
 		
+		<!-- <dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.0</version>
+		</dependency> -->
 	</dependencies>
 	
 	<reporting>
