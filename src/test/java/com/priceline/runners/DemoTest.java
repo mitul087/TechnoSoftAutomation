@@ -11,11 +11,11 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         
-        features = "src/test/resources/features/Demo001.feature",
+        features = "src/test/resources/features/Demo.feature",
         glue = "com/priceline/testSteps/"
 )
 
-public class Demo001Test {
+public class DemoTest {
 	
 	/*
 	 * Demo Test To get page title

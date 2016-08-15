@@ -11,6 +11,7 @@ public abstract class GlobalConfig {
 	private static String siteLink = "https://www.priceline.com/";
 	
 	/* File Paths */
+	private static String operatingSystem = System.getProperty("os.name");
 	private static String fileSeparator = System.getProperty("file.separator");
 	private static String currentDir = System.getProperty("user.dir");
 	
@@ -19,6 +20,7 @@ public abstract class GlobalConfig {
 	
 	public static void ConfigDrivers(){
 		System.out.println("INITIALIZING DRIVER");
+		System.out.println(operatingSystem);
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 		myDriver = new ChromeDriver();
 		//myDriver = new FirefoxDriver();
