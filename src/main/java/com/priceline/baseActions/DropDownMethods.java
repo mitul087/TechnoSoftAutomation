@@ -1,5 +1,7 @@
 package com.priceline.baseActions;
 
-public class DropDownMethods {
+import com.priceline.utilities.GlobalConfig;
+
+public class DropDownMethods extends GlobalConfig{
 
 }
