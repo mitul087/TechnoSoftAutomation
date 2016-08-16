@@ -31,11 +31,11 @@ public class InputMethods extends GlobalConfig{
 	 * Ataul
 	 * 8-16-2016 13:09
 	 */
-	public void sendInputKeys(String locator, String attributeOfLocator){
+	public void sendInputKeys(String locator, String attributeOfLocator, String message){
 		
 		try{
 			WebElement element = fm.getElement(locator, attributeOfLocator);
-			element.click();
+			element.sendKeys(message);
 		} catch (NoSuchElementException e){
 			
 			System.out.println("****** No Such Element found ****");
@@ -44,16 +44,17 @@ public class InputMethods extends GlobalConfig{
 	
 	/*
 	 * 
-	 * This method finds the elements needed extra time to be visible in DOM
+	 * This method finds the elements needed extra time to be visible in DOM and then send keys to it
 	 * 
 	 * Ataul
 	 * 8-16-2016 13:11
 	 */
-	public void sendInputKeys(String elementStatus, String locator, String attributeOfLocator,int waitTime){
+	public void sendInputKeys(String elementStatus, String locator, String attributeOfLocator,int waitTime,String message){
 		
 		try{
+			WebElement element = fm.getElement(elementStatus, locator, attributeOfLocator, waitTime);	
+			     element.sendKeys(message);
 			
-			fm.getElement(elementStatus, locator, attributeOfLocator, waitTime);			
 		} catch(NoSuchElementException e){
 			
 			System.out.println("***** No Such Element found !!! ");
