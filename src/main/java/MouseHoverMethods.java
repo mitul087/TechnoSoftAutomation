@@ -5,7 +5,6 @@ import org.openqa.selenium.interactions.Actions;
 
 import com.priceline.baseActions.FindMethods;
 import com.priceline.utilities.GlobalConfig;
-import com.relevantcodes.extentreports.LogStatus;
 
 /**
  * 
