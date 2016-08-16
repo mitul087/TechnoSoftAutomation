@@ -135,9 +135,10 @@ public class FindMethods extends GlobalConfig{
 		
 		if(elementStatus.equalsIgnoreCase( isVisible() ))
 			myElement = getElementIfVisible(locator, attributeOfLocator, waitTime);
+		/* Work Is Not done yet!
 		else if(locator.equalsIgnoreCase( isDisplayed() ))
 			myElement = myDriver.findElement(By.className(attributeOfLocator));
-
+		*/
 		return myElement;
 	}
 	
@@ -155,7 +156,19 @@ public class FindMethods extends GlobalConfig{
 		
 		WebDriverWait expectedWait = new WebDriverWait(myDriver, waitTime);
 		expectedWait.pollingEvery(1, TimeUnit.SECONDS);
-		expectedWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(attributeOfLocator)));
+		
+		if(locator.equalsIgnoreCase("id"))
+			myElement = expectedWait.until(ExpectedConditions.visibilityOfElementLocated(By.id(attributeOfLocator)));
+		else if(locator.equalsIgnoreCase("className"))
+			myElement = expectedWait.until(ExpectedConditions.visibilityOfElementLocated(By.className(attributeOfLocator)));
+		else if(locator.equalsIgnoreCase("name"))
+			myElement = expectedWait.until(ExpectedConditions.visibilityOfElementLocated(By.name(attributeOfLocator)));
+		else if(locator.equalsIgnoreCase("xpath"))
+			myElement = expectedWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(attributeOfLocator)));
+		else if(locator.equalsIgnoreCase("css"))
+			myElement = expectedWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(attributeOfLocator)));
+		else if(locator.equalsIgnoreCase("linkText"))
+			myElement = expectedWait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(attributeOfLocator)));
 		
 		return myElement;
 	}
