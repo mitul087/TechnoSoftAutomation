@@ -53,7 +53,7 @@ public class InputMethods extends GlobalConfig{
 		
 		try{
 			WebElement element = fm.getElement(elementStatus, locator, attributeOfLocator, waitTime);	
-			     element.sendKeys(message);
+			element.sendKeys(message);
 			
 		} catch(NoSuchElementException e){
 			
