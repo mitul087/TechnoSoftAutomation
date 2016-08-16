@@ -1,6 +1,7 @@
 package com.priceline.baseActions;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import com.priceline.utilities.GlobalConfig;
@@ -32,15 +33,36 @@ public class ClickMethods extends GlobalConfig{
 	 * 8-11-2016 16:41
 	 */
 	
-	public void clickOnElement(String locator, String attributeOfLocator, String isShowStopper){		
-		WebElement element = fm.getElement(locator, attributeOfLocator);
+	public void clickOnElement(String locator, String attributeOfLocator, String isShowStopper){	
+		
+		try{
+		    WebElement element = fm.getElement(locator, attributeOfLocator);
 			element.click();	
-		
-		
+			
+		} catch(NoSuchElementException e){
+			
+			System.out.println("********  Element coud not be found   **********");
+		}		
 	}
 	
-	public void findByxpathDyanamic(){
+	
+	/*
+	 * This method wait for element to be visible then 
+	 * try to locate and then return to the appropriate caller.	
+	 * Ataul
+	 * 8-16-2016
+	 */
+	
+	public void  clickOnElement(String isVisible,String locator, String attributeOfLocator, int waitTime){
 		
+		try{
+			fm.getElement(fm.isVisible(), locator, attributeOfLocator, waitTime);
+			
+		} catch(NoSuchElementException e){	
+			
+			System.out.println("********  Element coud not be found   **********");
+			
+		}		
 	}
 
 }
