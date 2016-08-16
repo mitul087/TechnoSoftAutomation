@@ -81,11 +81,11 @@
 		    <version>${selenium-java.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<!-- <dependency>
+		<dependency>
 		    <groupId>org.testng</groupId>
 		    <artifactId>testng</artifactId>
 		    <version>${testng.version}</version>
-		</dependency> -->
+		</dependency>
 		
 		<!-- Allure Report Depencies -->
 		<dependency>
