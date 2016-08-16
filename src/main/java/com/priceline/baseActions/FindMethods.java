@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.priceline.utilities.GlobalConfig;
+import com.priceline.utilities.KeyHandler;
 
 /**
  * @author arafatmamun
@@ -20,53 +21,15 @@ import com.priceline.utilities.GlobalConfig;
  */
 public class FindMethods extends GlobalConfig{
 	
+	KeyHandler kh = null;
 	/*
-	 * isVisible String
+	 * Constructor
 	 * Arafat Mamun
-	 * 8-16-2016 10:47
+	 * 8-16-2016 14:34
 	 */
-	public String isVisible(){
-		return "isVisible";
-	}
-	
-	/*
-	 * isDisplayed String
-	 * Arafat Mamun
-	 * 8-16-2016 10:48
-	 */
-	public String isDisplayed(){
-		return "isDisplayed";
-	}
-	
-	/*
-	 * isEnable String
-	 * Arafat Mamun
-	 * 8-16-2016 10:49
-	 */
-	public String isEnable(){
-		return "isEnable";
-	}
-	
-	/*
-	 * isPresent String
-	 * Arafat Mamun
-	 * 8-16-2016 10:47
-	 */
-	public String isPresent(){
-		return "isPresent";
-	}
-	
-	/*
-	 * Wait Time Converter
-	 * Arafat Mamun
-	 * 8-16-2016 10:47
-	 * parameter:
-	 * 	inSeconds: receive wait time in Second
-	 * Return: return time in miliseconds;
-	 */
-	private int waitTime(int inSeconds){
-		return inSeconds * 1000;
-	}
+	public FindMethods(){
+		kh = new KeyHandler();
+	}	
 	
 	/*
 	 * Find Specific Element for Web Page
@@ -138,7 +101,7 @@ public class FindMethods extends GlobalConfig{
 			
 		WebElement myElement = null;
 		
-		if(elementStatus.equalsIgnoreCase( isVisible() ))
+		if(elementStatus.equalsIgnoreCase( kh.isVisible() ))
 			myElement = getElementIfVisible(locator, attributeOfLocator, waitTime);
 		/* Work Is Not done yet!
 		else if(locator.equalsIgnoreCase( isDisplayed() ))
@@ -157,7 +120,7 @@ public class FindMethods extends GlobalConfig{
 	private WebElement getElementIfVisible(String locator, String attributeOfLocator, int waitTime){
 		
 		WebElement myElement= null;
-		waitTime = waitTime( waitTime);
+		waitTime = kh.waitTime( waitTime);
 		
 		WebDriverWait expectedWait = new WebDriverWait(myDriver, waitTime);
 		expectedWait.pollingEvery(1, TimeUnit.SECONDS);
