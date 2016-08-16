@@ -8,21 +8,22 @@ import com.priceline.utilities.GlobalConfig;
 public class ClickMethods extends GlobalConfig{
 	
 	public FindMethods  fm = null;
-	public WebElement element = null;
+	
 	
 	
 	/*
-	 * This constructor creates ClickMethods Object
-	 * 
-	 * 
+	 * This constructor creates ClickMethods Object 
+	 * to get any web element by using getElement method in that object.
+	 * Ataul
+	 * 8-16-2016 22:14
 	 */
 	
 	public ClickMethods(){
+		fm = new FindMethods();
+	}	
 		
 		
-		
-		
-	}
+	
 	
 	     
 	/*
@@ -33,7 +34,8 @@ public class ClickMethods extends GlobalConfig{
 	
 	public void clickOnElement(String locator, String attributeOfLocator, String isShowStopper){
 		
-		getElement(locator,attributeOfLocator,isShowStopper);
+		WebElement element = fm.getElement(locator, attributeOfLocator);
+			element.click();
 		
 		
 		
