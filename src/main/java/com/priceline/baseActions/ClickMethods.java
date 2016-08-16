@@ -53,10 +53,10 @@ public class ClickMethods extends GlobalConfig{
 	 * 8-16-2016
 	 */
 	
-	public void  clickOnElement(String isVisible,String locator, String attributeOfLocator, int waitTime){
+	public void  clickOnElement(String elementStatus,String locator, String attributeOfLocator, int waitTime){
 		
 		try{
-			fm.getElement(fm.isVisible(), locator, attributeOfLocator, waitTime);
+			fm.getElement(elementStatus, locator, attributeOfLocator, waitTime);
 			
 		} catch(NoSuchElementException e){	
 			
