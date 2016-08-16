@@ -17,6 +17,10 @@ import com.priceline.utilities.GlobalConfig;
 public class ClearDataMethods extends GlobalConfig{
 	
 	FindMethods fm =null;
+	/*
+	 * Constructor
+	 * Creating FindMethods Object
+	 */
 	public ClearDataMethods(){
 		fm = new FindMethods();
 	}
