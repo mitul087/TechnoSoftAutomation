@@ -64,7 +64,7 @@ public class FindMethods extends GlobalConfig{
 	 * 	inSeconds: receive wait time in Second
 	 * Return: return time in miliseconds;
 	 */
-	public int waitTime(int inSeconds){
+	private int waitTime(int inSeconds){
 		return inSeconds * 1000;
 	}
 	
@@ -76,7 +76,7 @@ public class FindMethods extends GlobalConfig{
 	 * 		locator : id / classname / name / xpath / css / link text of element to be found
 	 * 		attributeOfLocator : locator string
 	 */
-	public static WebElement getElement(String locator, String attributeOfLocator)throws NoSuchElementException{
+	public  WebElement getElement(String locator, String attributeOfLocator)throws NoSuchElementException{
 		
 		WebElement myElement = null;
 		
@@ -127,6 +127,11 @@ public class FindMethods extends GlobalConfig{
 	 * Git Element if Its Visible with Conditional Wait
 	 * Arafat Mamun
 	 * 8-16-2016 10:39
+	 * * Parameters:
+	 * 		elementStatus: isVisible / is Displayed / isEnable / isDisplayed 
+	 * 		locator : id / classname / name / xpath / css / link text of element to be found
+	 * 		attributeOfLocator : locator string
+	 * 		waitTime : wait time in seconds
 	 */
 	public WebElement getElement(String elementStatus, String locator, String attributeOfLocator,
 										int waitTime )throws NoSuchElementException{
