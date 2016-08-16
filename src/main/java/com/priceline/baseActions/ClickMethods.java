@@ -27,20 +27,19 @@ public class ClickMethods extends GlobalConfig{
 	
 	     
 	/*
-	 * This method locates elements
+	 * This method locates elements and click on it.
 	 * ataul
 	 * 8-11-2016 16:41
 	 */
 	
-	public void clickOnElement(String locator, String attributeOfLocator, String isShowStopper){
-		
+	public void clickOnElement(String locator, String attributeOfLocator, String isShowStopper){		
 		WebElement element = fm.getElement(locator, attributeOfLocator);
-			element.click();
+			element.click();	
 		
 		
-		
-		
-		
+	}
+	
+	public void findByxpathDyanamic(){
 		
 	}
 
