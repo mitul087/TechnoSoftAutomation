@@ -2,8 +2,6 @@ package com.priceline.baseActions;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 import com.priceline.utilities.GlobalConfig;
 
 
@@ -35,7 +33,7 @@ public class Assertion extends GlobalConfig{
 		try{
 			WebElement element = fm.getElement(locator, attributeOfLocator);
 			String actualMessage = element.getText();
-			Assert.assertEquals(expectedMessage, actualMessage);
+			//Assert.assertEquals(expectedMessage, actualMessage);
 		}catch(NoSuchElementException e){
 			
 			System.out.println("**** No Such Element found ***** ");
@@ -54,8 +52,8 @@ public class Assertion extends GlobalConfig{
 			 
 			 WebElement element = fm.getElement(locator, attributeOfLocator);
 			 String actualMessage = element.getText();
-			 SoftAssert  sassert = new SoftAssert();
-			 sassert.assertEquals(actualMessage, expectedMessage);
+			 //SoftAssert  sassert = new SoftAssert();
+			 //sassert.assertEquals(actualMessage, expectedMessage);
 		 }catch(NoSuchElementException e){
 			 
 			 System.out.println("**** No Such Element found *****");
