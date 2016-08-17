@@ -39,7 +39,12 @@ public class InputMethods extends GlobalConfig{
 			element.sendKeys(message);
 		} catch (NoSuchElementException e){
 			
-			Assert.fail();
+			if(e != null){
+				
+				Assert.fail("*** No Such Element Found ***");
+				
+				
+			}			
 		}		
 	}
 	
