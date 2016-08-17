@@ -1,5 +1,6 @@
 package com.priceline.baseActions;
 
+import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
@@ -38,7 +39,7 @@ public class InputMethods extends GlobalConfig{
 			element.sendKeys(message);
 		} catch (NoSuchElementException e){
 			
-			System.out.println("****** No Such Element found ****");
+			Assert.fail();
 		}		
 	}
 	

@@ -14,7 +14,7 @@ public class HotelsLanding extends MethodHandler{
 	
 	private String enterCityName = "//*[@id='hotel-dest']";
 	private String checkInField = "//*[@id='hotel-checkin']";
-	private String checkOutField= "//*[@id='hotel-checkout']";
+	private String checkOutField= "//*[@id='hotel-checkout']/test";
 	private String selectRooms = "//*[@id='hotel-rooms']";
 	private String SearchHotels = "//*[@id='hotel-btn-submit-retl']";
 	
@@ -47,6 +47,15 @@ public class HotelsLanding extends MethodHandler{
 	}
 	
 	/*
+	 * Click On check In field
+	 * Arafat Mamun
+	 * 8-17-2016 10:00
+	 */
+	public void selectCheckInDate(String checkInDate){
+		inputMethods().sendInputKeys(kh.xpath(), checkInField, checkInDate);
+	}
+	
+	/*
 	 * Enter check Out Field
 	 * Rahath Rahman
 	 * 8-16-2016 16:32
@@ -55,6 +64,15 @@ public class HotelsLanding extends MethodHandler{
 	public void  clickOncheckOutField(){
 		clickMethods().clickOnElement(kh.xpath(),checkOutField, kh.no());
 		
+	}
+	
+	/*
+	 * Click On check out field
+	 * Arafat Mamun
+	 * 8-17-2016 10:00
+	 */
+	public void selectCheckOutDate(String checkOutDate){
+		inputMethods().sendInputKeys(kh.xpath(), checkOutField, checkOutDate);
 	}
 	
 	/*

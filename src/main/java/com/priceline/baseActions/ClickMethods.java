@@ -1,5 +1,6 @@
 package com.priceline.baseActions;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
@@ -41,7 +42,7 @@ public class ClickMethods extends GlobalConfig{
 			
 		} catch(NoSuchElementException e){
 			
-			System.out.println("********  Element coud not be found   **********");
+			Assert.fail("No Such Element!");
 		}		
 	}
 	

@@ -31,7 +31,7 @@ public class TC_03_Steps extends PageObjectHandler{
 	
 	@When("^Select \"([^\"]*)\" as Check-in Date$")
 	public void selectCheckInDate(String checkInDate){
-		
+		hotelsLanding().selectCheckInDate(checkInDate);
 	}
 	@When("^Click on check out field$")
 	public void click_on_check_out_field(){
@@ -40,8 +40,8 @@ public class TC_03_Steps extends PageObjectHandler{
 	}
 
 	@When("^Select \"([^\"]*)\" as Check-out Date$")
-	public void select_as_Check_out_Date(String checkOutDate){
-	    
+	public void selectCheckOutDate(String checkOutDate){
+		hotelsLanding().selectCheckOutDate(checkOutDate);
 	}
 
 	@When("^Click on rooms$")
