@@ -1,6 +1,7 @@
 package com.priceline.utilities;
 
 import com.priceline.baseActions.ClickMethods;
+import com.priceline.baseActions.DatePicker;
 import com.priceline.baseActions.DropDownMethods;
 import com.priceline.baseActions.InputMethods;
 
@@ -36,6 +37,17 @@ public abstract class MethodHandler{
 	public DropDownMethods dropDownMethods(){
 		DropDownMethods	dropDownMethods = new DropDownMethods();
 		return dropDownMethods;
+	}
+	
+	/*
+	 * 
+	 * This method return Date Picker Object.
+	 * Ataul
+	 * 8-17-2016 24:26
+	 */
+	public DatePicker datePickerMethods(){		
+		DatePicker picker = new DatePicker();
+		return picker;		
 	}
 
 
