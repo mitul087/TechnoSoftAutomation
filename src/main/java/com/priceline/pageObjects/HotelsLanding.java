@@ -90,7 +90,7 @@ public class HotelsLanding extends MethodHandler{
 	 */
 	
 	public void selectRooms(String selectRooms){
-		dropDownMethods().selectFromDropDownList(kh.xpath(),this.selectRooms, selectRooms);
+		dropDownMethods().selectFromDropDownList(kh.xpath(),this.selectRooms, selectRooms, kh.no());
 	}
 	
 

@@ -32,14 +32,14 @@ public class InputMethods extends GlobalConfig{
 	 * Ataul
 	 * 8-16-2016 13:09
 	 */
-	public void sendInputKeys(String locator, String attributeOfLocator, String message){
+	public void sendInputKeys(String locator, String attributeOfLocator, String message) {
 		
 		try{
 			WebElement element = fm.getElement(locator, attributeOfLocator);
 			element.sendKeys(message);
 		} catch (NoSuchElementException e){
 			
-			Assert.fail();
+		
 		}		
 	}
 	
