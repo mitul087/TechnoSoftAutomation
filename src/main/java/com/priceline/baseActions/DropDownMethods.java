@@ -32,7 +32,7 @@ public class DropDownMethods extends GlobalConfig{
 	 * 8-16-2016 13:55
 	 */		
 			
-	public void selectFromDropDownList(String locator,String attributeOfLocator,String value){
+	public void selectFromDropDownList(String locator,String attributeOfLocator,String value, String isShowStopper){
 		
 		try{			
 			WebElement element = fm.getElement(locator, attributeOfLocator);
@@ -49,7 +49,7 @@ public class DropDownMethods extends GlobalConfig{
 	 * Ataul
 	 * 8-16-2016 14:00
 	 */
-	public void selectFromDropDown(String elementStatus, String locator, String attributeOfLocator,int waitTime, String value){
+	public void selectFromDropDown(String elementStatus, String locator, String attributeOfLocator,int waitTime, String value, String isShowStopper){
 		
 		try{
 			
