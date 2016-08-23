@@ -10,7 +10,7 @@ public abstract class GlobalConfig {
 
 	/* File Paths */
 	private static String operatingSystem = System.getProperty("os.name");
-	private static String fileSeparator = System.getProperty("file.separator");
+	private static String fileSeparator = System.getProperty("file.separator"); 
 	private static String currentDir = System.getProperty("user.dir");
 
 	private static String chromeDriverPath = currentDir 

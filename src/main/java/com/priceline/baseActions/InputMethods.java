@@ -38,17 +38,13 @@ public class InputMethods extends GlobalConfig{
 			WebElement element = fm.getElement(locator, attributeOfLocator);
 			element.sendKeys(message);
 		} catch (NoSuchElementException e){
-			
-<<<<<<< HEAD
-		
-=======
+
 			if(e != null){
 				
 				Assert.fail("*** No Such Element Found ***");
 				
 				
-			}			
->>>>>>> 09db97eb28e0ad6824c68bc2aa3f460118f1c904
+			}
 		}		
 	}
 	
