@@ -8,10 +8,14 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.FluentWait;
 
+import com.google.common.base.Function;
 import com.priceline.utilities.GlobalConfig;
 import com.priceline.utilities.KeyHandler;
 
@@ -43,20 +47,33 @@ public class FindMethods extends GlobalConfig{
 		
 		WebElement myElement = null;
 		
-		if(locator.equalsIgnoreCase("id"))
-			myElement = myDriver.findElement(By.id(attributeOfLocator));
-		else if(locator.equalsIgnoreCase("className"))
-			myElement = myDriver.findElement(By.className(attributeOfLocator));
-		else if(locator.equalsIgnoreCase("name"))
-			myElement = myDriver.findElement(By.name(attributeOfLocator));
-		else if(locator.equalsIgnoreCase("xpath"))
-			myElement = myDriver.findElement(By.xpath(attributeOfLocator));
-		else if(locator.equalsIgnoreCase("css"))
-			myElement = myDriver.findElement(By.cssSelector(attributeOfLocator));
-		else if(locator.equalsIgnoreCase("linkText"))
-			myElement = myDriver.findElement(By.linkText(attributeOfLocator));
-
-		return myElement;
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(myDriver)
+                .withTimeout(40, TimeUnit.SECONDS)
+                .pollingEvery(400, TimeUnit.MILLISECONDS)
+                .ignoring(NoSuchElementException.class);
+		
+        myElement = wait.until(new Function<WebDriver, WebElement>() {
+        	
+            public WebElement apply(WebDriver driver) {
+            	
+            	WebElement element = null;
+            	if(locator.equalsIgnoreCase("id"))
+            		element = driver.findElement(By.id(attributeOfLocator));
+        		else if(locator.equalsIgnoreCase("className"))
+        			element = driver.findElement(By.className(attributeOfLocator));
+        		else if(locator.equalsIgnoreCase("name"))
+        			element = driver.findElement(By.name(attributeOfLocator));
+        		else if(locator.equalsIgnoreCase("xpath"))
+        			element = driver.findElement(By.xpath(attributeOfLocator));
+        		else if(locator.equalsIgnoreCase("css"))
+        			element = driver.findElement(By.cssSelector(attributeOfLocator));
+        		else if(locator.equalsIgnoreCase("linkText"))
+        			element = driver.findElement(By.linkText(attributeOfLocator));
+                return element;
+            }
+        });
+        
+        return myElement;
 	}
 	
 	/*
