@@ -79,7 +79,7 @@ public class DatePicker extends GlobalConfig{
 	
 	
 	public  void chooseDate(String date) throws InterruptedException {
-		WebElement dateWidget = myDriver.findElement(By.className(calender[1]));
+		WebElement dateWidget = webdriver.findElement(By.className(calender[1]));
 		List<WebElement> rows = dateWidget.findElements(By.tagName("tr"));
 		List<WebElement> columns = dateWidget.findElements(By.tagName("td"));
 		for (WebElement cell : columns) {

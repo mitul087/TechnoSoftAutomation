@@ -47,7 +47,7 @@ public class FindMethods extends GlobalConfig{
 		
 		WebElement myElement = null;
 		
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(myDriver)
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(webdriver)
                 .withTimeout(40, TimeUnit.SECONDS)
                 .pollingEvery(400, TimeUnit.MILLISECONDS)
                 .ignoring(NoSuchElementException.class);
@@ -89,15 +89,15 @@ public class FindMethods extends GlobalConfig{
 		List< WebElement > myElements;
 		
 		if(locator.equalsIgnoreCase("id"))
-			myElements = myDriver.findElements(By.id(attributeOfLocator));
+			myElements = webdriver.findElements(By.id(attributeOfLocator));
 		else if(locator.equalsIgnoreCase("className"))
-			myElements = myDriver.findElements(By.className(attributeOfLocator));
+			myElements = webdriver.findElements(By.className(attributeOfLocator));
 		else if(locator.equalsIgnoreCase("name"))
-			myElements = myDriver.findElements(By.name(attributeOfLocator));
+			myElements = webdriver.findElements(By.name(attributeOfLocator));
 		else if(locator.equalsIgnoreCase("xpath"))
-			myElements = myDriver.findElements(By.xpath(attributeOfLocator));
+			myElements = webdriver.findElements(By.xpath(attributeOfLocator));
 		else if(locator.equalsIgnoreCase("css"))
-			myElements = myDriver.findElements(By.cssSelector(attributeOfLocator));
+			myElements = webdriver.findElements(By.cssSelector(attributeOfLocator));
 		else throw new NoSuchElementException(attributeOfLocator);
 
 		return myElements;
@@ -139,7 +139,7 @@ public class FindMethods extends GlobalConfig{
 		WebElement myElement= null;
 		waitTime = kh.waitTime( waitTime);
 		
-		WebDriverWait expectedWait = new WebDriverWait(myDriver, waitTime);
+		WebDriverWait expectedWait = new WebDriverWait(webdriver, waitTime);
 		expectedWait.pollingEvery(1, TimeUnit.SECONDS);
 		
 		if(locator.equalsIgnoreCase("id"))

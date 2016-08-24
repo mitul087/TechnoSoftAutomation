@@ -56,14 +56,9 @@ public class TC_03_Steps extends PageObjectHandler{
 	}
 
 
-	@When("^Click on Seach for Hotels$")
+	@When("^Click on Search for Hotels$")
 	public void click_on_Seach_for_Hotels(){
 		hotelsLanding().clickOnSearchHotels();
 	   
 	}
-
-
-	
-
-	
 }

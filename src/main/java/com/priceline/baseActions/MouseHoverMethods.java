@@ -40,7 +40,7 @@ public class MouseHoverMethods extends GlobalConfig{
 		
 		try{
 			WebElement myElement = fm.getElement(locator, attributeOfLocator);
-			Actions myAction = new Actions(myDriver);
+			Actions myAction = new Actions(webdriver);
 			myAction.moveToElement(myElement).build().perform();
 		} catch(NoSuchElementException exc){
 			Assert.fail("No Element 1");

@@ -1,38 +1,41 @@
 package com.priceline.utilities;
 
+import com.priceline.utilities.driverconfig.DriverFactory;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public abstract class GlobalConfig {
+ 
+	public static WebDriver webdriver = null;
+	private static ThreadLocal<DriverFactory> driverFactory;
+	private static List<DriverFactory> webDriverThreadPool = Collections.synchronizedList(new ArrayList<DriverFactory>());
 
-	public static WebDriver myDriver = null;
-	private static String siteLink = "https://www.priceline.com/";
-
-	/* File Paths */
-	private static String operatingSystem = System.getProperty("os.name");
-	private static String fileSeparator = System.getProperty("file.separator"); 
-	private static String currentDir = System.getProperty("user.dir");
-
-	private static String chromeDriverPath = currentDir 
-			+ fileSeparator
-			+ "macChromeDriver" 
-			+ fileSeparator 
-			+ "chromedriver";
-
-	/* end of file paths */
-
-	public static void ConfigDrivers() {
-		System.out.println("INITIALIZING DRIVER");
-		System.out.println(operatingSystem);
-		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-		myDriver = new ChromeDriver();
-		// myDriver = new FirefoxDriver();
-		myDriver.navigate().to(siteLink);
+	public static void instantiateDriverObject() {
+		driverFactory = new ThreadLocal<DriverFactory>() {
+			@Override
+			protected DriverFactory initialValue() {
+				DriverFactory driverFactory = new DriverFactory();
+				webDriverThreadPool.add(driverFactory);
+				return driverFactory;
+			}
+		};
 	}
 
-	public static void terminateDrivers() {
+	public WebDriver getDriver() throws Exception {
+		webdriver = driverFactory.get().getDriver();
+		return webdriver;
+	}
 
-		myDriver.close();
-		myDriver.quit();
+	public void clearCookies() throws Exception {
+		getDriver().manage().deleteAllCookies();
+	}
+
+	public static void closeDriverObjects() {
+		for (DriverFactory driverFactory : webDriverThreadPool) {
+			driverFactory.quitDriver();
+		}
 	}
 }
