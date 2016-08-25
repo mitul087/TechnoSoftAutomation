@@ -106,7 +106,7 @@ public enum DriverType implements DriverSetup {
 			// Get Chrome driver form project's "macChromeDriver" folder
 			String projectLocalDir = System.getProperty("user.dir");
 			String fileSeparator = System.getProperty("file.separator");
-			String chromeDriverPath = projectLocalDir + fileSeparator + "macChromeDriver" + fileSeparator + "chromedriver";
+			String chromeDriverPath = projectLocalDir + fileSeparator + "winChromeDriver" + fileSeparator + "chromedriver.exe";
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
 			/***************************************************************
