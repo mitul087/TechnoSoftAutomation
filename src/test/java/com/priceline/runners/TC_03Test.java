@@ -15,7 +15,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         
-        features = "src/test/resources/features/TC_03.feature",
+        features = "src/test/resources/features/TC_04.feature",
         glue = "com/priceline/testSteps/"
 )
 public class TC_03Test {

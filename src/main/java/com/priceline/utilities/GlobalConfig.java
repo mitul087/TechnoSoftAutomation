@@ -2,6 +2,7 @@ package com.priceline.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public abstract class GlobalConfig {
 
@@ -15,18 +16,18 @@ public abstract class GlobalConfig {
 
 	private static String chromeDriverPath = currentDir 
 			+ fileSeparator
-			+ "macChromeDriver" 
+			+ "winChromeDriver" 
 			+ fileSeparator 
-			+ "chromedriver";
+			+ "chromedriver.exe";
 
 	/* end of file paths */
 
 	public static void ConfigDrivers() {
 		System.out.println("INITIALIZING DRIVER");
-		System.out.println(operatingSystem);
+		System.out.println(operatingSystem + " : " + chromeDriverPath);
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 		myDriver = new ChromeDriver();
-		// myDriver = new FirefoxDriver();
+		//myDriver = new FirefoxDriver();
 		myDriver.navigate().to(siteLink);
 	}
 

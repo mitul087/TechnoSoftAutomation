@@ -2,6 +2,7 @@ package com.priceline.utilities;
 
 import com.priceline.pageObjects.Header;
 import com.priceline.pageObjects.HotelsLanding;
+import com.priceline.pageObjects.MyTripsLink;
 
 public abstract class PageObjectHandler {
 	
@@ -23,5 +24,12 @@ public abstract class PageObjectHandler {
 	public static HotelsLanding hotelsLanding(){
 		HotelsLanding hotelsLanding = new HotelsLanding();
 		return hotelsLanding;
+	}
+	
+	public static MyTripsLink myTripsLink(){
+		MyTripsLink myTripsLink = new MyTripsLink();
+		return myTripsLink;
+		
+		
 	}
 }
