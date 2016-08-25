@@ -15,8 +15,14 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.remote.CapabilityType.PROXY;
 
@@ -210,6 +216,34 @@ public enum DriverType implements DriverSetup {
 
 		public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
 			return new OperaDriver(capabilities);
+		}
+	},
+	IOS {
+		public DesiredCapabilities getDesiredCapabilities(Proxy proxySettings) {
+
+			/************************************************************************
+			 * set up desired capabilities for mobile web driver.
+			 * **********************************************************************/
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setCapability("PLATFORM_NAME", "iOS");
+			capabilities.setCapability("PLATFORM_VERSION", "9.3");
+			capabilities.setCapability("DEVICE_NAME", "iPhone 6 Simulator");
+			capabilities.setCapability(CapabilityType.BROWSER_NAME, "Safari");
+
+			return addProxySettings(capabilities, proxySettings);
+		}
+
+		public WebDriver getWebDriverObject(DesiredCapabilities capabilities) {
+
+			URL url = null;
+
+			try {
+				url = new URL("http://127.0.0.1:4723/wd/hub");
+			} 
+			catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+			return new IOSDriver(url, capabilities);
 		}
 	};
 

@@ -11,7 +11,7 @@ import com.priceline.utilities.GlobalConfig;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.priceline.utilities.driverconfig.DriverType.CHROME;
+import static com.priceline.utilities.driverconfig.DriverType.IOS;
 import static com.priceline.utilities.driverconfig.DriverType.valueOf;
 import static org.openqa.selenium.Proxy.ProxyType.MANUAL;
 
@@ -19,7 +19,7 @@ public class DriverFactory extends GlobalConfig {
 
 	private DriverType selectedDriverType;
 
-	private final DriverType defaultDriverType = CHROME;
+	private final DriverType defaultDriverType = IOS;
 	private final String browser = System.getProperty("browser", defaultDriverType.toString()).toUpperCase();
 	private final String operatingSystem = System.getProperty("os.name").toUpperCase();
 	private final String operatingSystemVersion = System.getProperty("os.version").toUpperCase();

@@ -138,6 +138,13 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.0</version>
 		</dependency> -->
+		
+		<!-- Dependencies for IOS -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>3.4.1</version>
+		</dependency>
 	</dependencies>
 	
 	<reporting>
